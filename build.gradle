@@ -1,0 +1,19 @@
+subprojects
+{
+    apply plugin: "java-library"
+    
+    sourceCompatibility = 1.8
+    
+    repositories
+    {
+        mavenCentral()
+    }
+
+    dependencies
+    {
+        testImplementation group: 'junit', name: 'junit', version: '4.12'
+    }
+
+    // Set to your own group to be able to publish
+    // group = "com.hello2morrow"
+}

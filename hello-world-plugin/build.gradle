@@ -1,0 +1,31 @@
+plugins {
+    id "java-gradle-plugin"
+    id "com.gradle.plugin-publish" version "0.10.1"
+}
+
+dependencies {
+    implementation gradleApi()
+    api project (':hello-world-dependency')
+}
+
+gradlePlugin {
+  plugins {
+    MultiProjectHelloWorldPlugin {
+      id = 'hello.world.plugin.MultiProjectHelloWorldPlugin'
+      implementationClass = 'hello.world.plugin.MultiProjectHelloWorldPlugin'
+    }
+  }
+}
+
+pluginBundle {
+  website = 'https://github.com/sonargraph/multi-project-hello-world-plugin'
+  vcsUrl = 'https://github.com/sonargraph/multi-project-hello-world-plugin.git'
+  description = 'Multi Project Hello World Plugin'
+  tags = ['hello world', 'multi project']
+
+  plugins {
+    MultiProjectHelloWorldPlugin {
+      displayName = 'Multi Project Hello World Plugin'
+    }
+  }
+}
